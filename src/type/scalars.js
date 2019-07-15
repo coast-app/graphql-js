@@ -38,7 +38,8 @@ function serializeInt(value: mixed): number {
   return num;
 }
 
-function coerceInt(value: mixed): number {
+function coerceInt(val: mixed): number {
+  const value = Number(val);
   if (!isInteger(value)) {
     throw new TypeError(
       `Int cannot represent non-integer value: ${inspect(value)}`,
