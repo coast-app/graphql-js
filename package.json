@@ -1,19 +1,18 @@
 {
-  "name": "graphql",
-  "version": "14.4.2",
+  "name": "@coast/graphql",
+  "version": "14.4.3",
   "description": "A Query Language and Runtime which can target any service.",
   "license": "MIT",
-  "private": true,
   "main": "index",
   "module": "index.mjs",
   "sideEffects": false,
-  "homepage": "https://github.com/graphql/graphql-js",
+  "homepage": "https://github.com/coast-app/graphql-js",
   "bugs": {
-    "url": "https://github.com/graphql/graphql-js/issues"
+    "url": "https://github.com/coast-app/graphql-js/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/graphql/graphql-js.git"
+    "url": "https://github.com/coast-app/graphql-js.git"
   },
   "keywords": [
     "graphql",
@@ -22,39 +21,7 @@
   "engines": {
     "node": ">= 6.x"
   },
-  "scripts": {
-    "test": "npm run prettier:check && npm run lint && npm run check && npm run testonly",
-    "test:ci": "yarn check --integrity && npm run prettier:check && npm run lint -- --no-cache && npm run check && npm run testonly:cover && npm run build",
-    "testonly": "mocha --full-trace src/**/__tests__/**/*-test.js",
-    "testonly:cover": "nyc npm run testonly",
-    "lint": "eslint --cache --report-unused-disable-directives src resources",
-    "benchmark": "node ./resources/benchmark.js",
-    "prettier": "prettier --ignore-path .gitignore --write --list-different '**/*.{js,md,json,yml}'",
-    "prettier:check": "prettier --ignore-path .gitignore --check '**/*.{js,md,json,yml}'",
-    "check": "flow check",
-    "check:cover": "node resources/check-cover.js && nyc report --nycrc-path .nycflowrc.yml",
-    "build": "node resources/build.js",
-    "changelog": "node resources/gen-changelog.js",
-    "preversion": ". ./resources/checkgit.sh",
-    "version": "node resources/gen-version.js && npm test && git add src/version.js",
-    "gitpublish": ". ./resources/gitpublish.sh"
-  },
   "dependencies": {
     "iterall": "^1.2.2"
-  },
-  "devDependencies": {
-    "@babel/core": "7.5.4",
-    "@babel/plugin-transform-flow-strip-types": "7.4.4",
-    "@babel/polyfill": "7.4.4",
-    "@babel/preset-env": "7.5.4",
-    "@babel/register": "7.4.4",
-    "babel-eslint": "10.0.2",
-    "chai": "4.2.0",
-    "eslint": "5.16.0",
-    "eslint-plugin-flowtype": "3.11.1",
-    "flow-bin": "0.102.0",
-    "mocha": "6.1.4",
-    "nyc": "14.1.1",
-    "prettier": "1.18.2"
   }
 }
